@@ -1,30 +1,27 @@
 import React from 'react';
-import './Lists.css';
 
-function Lists() {
-	const list = [
-		{
-			title: 'React',
-			url: 'https://reactjs.org/',
-			author: 'Jordan Walke',
-			num_comments: 3,
-			points: 4,
-			objectID: 0,
-		},
-		{
-			title: 'Redux',
-			url: 'https://redux.js.org/',
-			author: 'Dan Abramov, Andrew Clark',
-			num_comments: 2,
-			points: 5,
-			object_ID: 1,
-		},
-	];
+import { stories } from '../Data';
 
-	return list.map((i) => {
-        return (<h4>Title: {i.title}</h4>;
-        
-    )});
-}
+const Lists = () => {
+	return stories.map((i) => {
+		return <Item key={i.objectID} item={i}></Item>;
+	});
+};
+
+const Item = ({ item }) => {
+	return (
+		<div>
+			<hr />
+
+			<h4>
+				<a href={item.url}>Title: {item.title}</a>
+			</h4>
+			<h4>Author: {item.author}</h4>
+			<h4>Points_Scored: {item.points}</h4>
+
+			<hr />
+		</div>
+	);
+};
 
 export default Lists;
