@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { FaTimes } from 'react-icons/fa';
 import { stories } from '../Data';
 
 const Lists = () => {
@@ -14,7 +14,9 @@ const Item = ({ item }) => {
 			<hr />
 
 			<h4>
-				<a href={item.url}>Title: {item.title}</a>
+				<a href={item.url}>
+					Title: {item.title} <FaTimes style={{ color: 'red' }}></FaTimes>
+				</a>
 			</h4>
 			<h4>Author: {item.author}</h4>
 			<h4>Points_Scored: {item.points}</h4>

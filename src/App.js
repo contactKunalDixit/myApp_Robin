@@ -31,11 +31,11 @@ let App = () => {
 
 export default App;
 
-/**
- * *  NOTE: Always manage the state at a component where the component that's interested in that state, either manages the state i.e. uses information directly from the state.
- *  * or
- * * a component below the managing component (using information through the props).
- *
- * * If a component below needs to update the state, pass a callback handler down to it so that it gets executed there but implemented at parents function signature. If a compoenent needs to use the state (e.g. displaying it), pass it down as props.
- *
+/*
+   NOTE: Always manage the state at the highest possible level so that the state variable and the function can be passed through to all the children through Props.
+ 
+  for resetting the value of state, define and implement the function in the parent component but pass the function as a prop and get that executed in the child component where the event gets triggered
+ 
+  If a component below needs to update the state, pass a callback handler down to it so that it gets executed there but implemented at parents function signature. If a compoenent needs to use the state (e.g. displaying it), pass it down as props.
+ 
  */
